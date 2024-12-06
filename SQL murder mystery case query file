@@ -1,0 +1,45 @@
+crime case:- https://mystery.knightlab.com/
+
+1. 
+select*from crime_scene_report
+where date=20180115 and city='SQL City' and type='murder';
+
+2. 
+select*from person
+where address_street_name='Northwestern Dr'
+order by address_number desc;
+    or
+select*from person
+where address_street_name='Franklin Ave' and name like 'Annabel%';
+
+combining upper 2 query i can use this :---->
+
+SELECT * FROM person
+WHERE (address_street_name = 'Northwestern Dr')
+   OR (address_street_name = 'Franklin Ave' AND name LIKE 'Annabel%')
+ORDER BY address_number DESC;
+
+4. 
+select*from drivers_license
+where plate_number like'%H42W%';
+
+5. 
+select *from get_fit_now_check_in
+where check_in_date =20180109;
+
+5. and 6. both. 
+select gf.person_id,gf.name from get_fit_now_member as gf
+join get_fit_now_check_in as gc
+on gf.id=gc.membership_id
+where gf.membership_status='gold' and gc.check_in_date=20180109;
+
+7. 
+select*from person
+where id=67318;
+
+8. 
+select*from facebook_event_checkin
+where event_name='SQL Symphony Concert' and date like '201712%'
+order by person_id desc;
+
+WOHOOOOOO!!!! found the real culprit Miranda Priestly and the shooter Jeremy Bowers
