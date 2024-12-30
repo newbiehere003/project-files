@@ -1,6 +1,6 @@
 music playlist project SQL:- 
 												EASY LEVEL
---1. senior most employee on job title
+--1. senior-most employee on job title
 --acc. to job title
 									select * from employee
 									order by levels desc
@@ -8,12 +8,11 @@ music playlist project SQL:-
 
 --acc. to age
  
-								SELECT *, 
-									EXTRACT(YEAR FROM AGE(birthdate)) AS age
-								FROM 
-									employee
-									order by age desc
-									limit 1;
+							SELECT *, 
+							(extract(year from current_date)-EXTRACT(YEAR FROM birthdate)) AS age
+							FROM 
+							employee
+							order by age desc;
 --acc to hiring date
 
 
